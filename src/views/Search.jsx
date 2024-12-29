@@ -1,5 +1,4 @@
 import { BsSearch } from "react-icons/bs";
-import BtnCart from "../components/btnCart";
 import { useContext } from "react";
 import { contextApp } from "../context/contextApp";
 
@@ -15,7 +14,7 @@ export default function Search() {
                     onChange={e => inputSearchBook(e.target.value)}
                     type="text" name="" placeholder="Find a Book" id="" />
             </div>
-            <BtnCart src='/cart' className="relative self-center place-self-center" />
+            {/* <BtnCart src='/cart' className="relative self-center place-self-center" /> */}
         </div>
     </>);
 }
