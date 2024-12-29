@@ -8,6 +8,7 @@ import BookView from '../views/BookView';
 import LayNormal from '../Layouts/LayNormal';
 import Checkout from '../views/Checkout';
 import ValidPay from '../views/ValidPay';
+import ShoppingCart from '../views/ShoppingCart';
 
 function MainRoute() {
 
@@ -18,7 +19,7 @@ function MainRoute() {
           <Route path="/" element={<Main />} />
           <Route path="/books" element={<LayBooks><Books /></LayBooks>} />
           <Route path="/books/:idBooks" element={<LayBooks><BookView /></LayBooks>} />
-          {/* <Route path="/cart" element={<LayNormal><Cart /></LayNormal>} /> */}
+          <Route path="/cart" element={<LayNormal><ShoppingCart /></LayNormal>} />
           <Route path="/cart/checkout" element={<LayNormal><Checkout /></LayNormal>} />
           <Route path="/cart/checkout/success" element={<LayNormal><ValidPay /></LayNormal>} />
           <Route path="*" element={<LayBooks><NotFount /></LayBooks>} />
