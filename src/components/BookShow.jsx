@@ -19,7 +19,7 @@ export default function BookShow({ data }) {
                 <div className="mt-5 pl-4">
                     
                     <span className="text-xs">ID: {data.id}</span>
-                    <h5 className="mb-5 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h5>
+                    <h5 className="mb-5 text-4xl font-bold tracking-tight text-gray-900">{data.title}</h5>
                     <span className="font-bold text-base">Authors</span>
                     <ul className="mb-3">
                         {data.authors.length > 0 ?
@@ -36,7 +36,7 @@ export default function BookShow({ data }) {
                         <span className="font-bold">Books sold:</span> {data.download_count}
                     </p>
                     <div className="flex justify-start gap-6 items-center mt-8">
-                        <p className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">$80.00</p>
+                        <p className="mb-2 text-3xl font-bold tracking-tight text-gray-900">$80.00</p>
                         <button onClick={() => clickAddCart(data)} className="rounded-md py-1.5 bg-amber-800 text-white px-5" type="button">Add</button>
                     </div>
                 </div>

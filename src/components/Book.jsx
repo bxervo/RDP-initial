@@ -18,12 +18,12 @@ export default function Book({ data, link, title, authors, imagen }) {
             </div>
             <div className="mt-5 h-[76px] overflow-hidden">
                 <ALink src={link}>
-                    <h5 className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+                    <h5 className="mb-2 text-base font-bold tracking-tight text-gray-900">{title}</h5>
                 </ALink>
-                <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">{authors}</p>
+                <p className="mb-3 text-sm font-normal text-gray-700">{authors}</p>
             </div>
             <div className="flex justify-between items-center mt-5">
-                <p className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">$80.00</p>
+                <p className="mb-2 text-lg font-bold tracking-tight text-gray-900">$80.00</p>
                 <button onClick={() => clickAddCart(data)} className="rounded-md py-1.5 bg-amber-800 text-white px-5" type="button">Add</button>
             </div>
         </article>
