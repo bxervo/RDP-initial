@@ -1,7 +1,8 @@
-import MainRoute from '../routes/MainRoute'
+import { useState } from "react";
 import { contextApp } from '../context/contextApp';
+import MainRoute from '../routes/MainRoute'
 import useConsult from "../hooks/useConsult";
-import { useEffect, useState } from "react";
+import useLocalStorage from '../hooks/useLocalStorage';
 
 export default function App() {
 
@@ -9,13 +10,9 @@ export default function App() {
     const paramValue = queryParams.toString() ? '?' + queryParams.toString() : '';
 
     const [params, setParams] = useState(paramValue);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useLocalStorage('ShopCart',[]);
     const [listBooks, setListBooks] = useState({ "results": [] });
     const jsonData = useConsult('https://gutendex.com/books' + params, params, setListBooks);
-
-    const clickAddCart = (data) => {
-        setCart([...cart, data]);
-    }
 
     const clickAddParams = () => {
         setTimeout(() => {
@@ -27,6 +24,10 @@ export default function App() {
                 setListBooks({ "results": [] });
             };
         }, 100);
+    }
+
+    const clickAddCart = (data) => {
+        setCart([...cart, data]);
     }
 
     const clickRemoveCart = (id) => {
